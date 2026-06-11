@@ -108,22 +108,4 @@ document.querySelectorAll('.field select').forEach(sel => {
   upd();
 });
 
-/* ---------- CONTACT FORM ---------- */
-const form = document.querySelector('.contact-form-card form');
-if (form) {
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const btn = form.querySelector('.submit-btn');
-    const orig = btn.textContent;
-    btn.textContent = '✓  Message Sent — We\'ll Be In Touch Soon';
-    btn.classList.add('success');
-    btn.disabled = true;
-    setTimeout(() => {
-      form.reset();
-      document.querySelectorAll('.field select').forEach(s => s.parentElement.classList.remove('has-val'));
-      btn.textContent = orig;
-      btn.classList.remove('success');
-      btn.disabled = false;
-    }, 4000);
-  });
-}
+/* ---------- CONTACT FORM — submitted via Formspree ---------- */
