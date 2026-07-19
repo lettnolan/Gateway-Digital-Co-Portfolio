@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rockett Automotive — Auto Repair, Wentzville MO</title>
+<meta name="description" content="Honest auto repair in Wentzville, MO. 98% recommended across 76 reviews. From oil changes to 9-second builds — Rockett Automotive does what's best for your car.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Rockett Automotive — your new homepage">
+<meta property="og:description" content="98% recommended · A+ BBB · 9-Second Club. Built for Rockett Automotive by Gateway Digital Co — live this week if you want it.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gatewaydigitalco.com/mockups/rockett.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --asphalt:#131313;
+    --panel:#1D1D1D;
+    --line:#2C2C2C;
+    --white:#F4F2EE;
+    --muted:#A9A49C;
+    --rocket:#E03A1E;
+    --rocket-dark:#B22C14;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--asphalt);color:var(--white);font-family:'Barlow',sans-serif;line-height:1.6}
+  h1,h2,h3,.disp{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:.03em;line-height:1.05}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+  /* mockup banner */
+  .mock{background:#FAF5EC;color:#1E1913;font-size:13px;text-align:center;padding:8px 16px}
+  .mock b{color:#C8442C}
+  .mock a{text-decoration:underline}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(19,19,19,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .logo{font-family:'Bebas Neue';font-size:26px;letter-spacing:.05em}
+  .logo span{color:var(--rocket)}
+  .nav-links{display:flex;gap:28px;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+  .nav-links a:hover{color:var(--rocket)}
+  .call-btn{background:var(--rocket);padding:10px 20px;font-weight:700;font-size:14px;letter-spacing:.05em;text-transform:uppercase;transition:background .15s}
+  .call-btn:hover{background:var(--rocket-dark)}
+  @media(max-width:760px){.nav-links{display:none}}
+
+  /* hero */
+  .hero{position:relative;padding:110px 0 90px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    repeating-linear-gradient(-55deg, transparent 0 130px, rgba(224,58,30,.05) 130px 132px),
+    radial-gradient(ellipse at 75% 20%, rgba(224,58,30,.10), transparent 55%)}
+  .hero .wrap{position:relative}
+  .kicker{color:var(--rocket);font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.22em;margin-bottom:18px}
+  .hero h1{font-size:clamp(56px,9vw,110px);text-transform:uppercase}
+  .hero h1 em{font-style:normal;color:var(--rocket)}
+  .hero p{max-width:560px;margin:22px 0 34px;font-size:19px;color:var(--muted)}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-block;padding:16px 34px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:15px}
+  .btn-red{background:var(--rocket)} .btn-red:hover{background:var(--rocket-dark)}
+  .btn-ghost{border:2px solid var(--line)} .btn-ghost:hover{border-color:var(--rocket);color:var(--rocket)}
+  .speed{position:absolute;right:-40px;bottom:30px;width:420px;opacity:.5}
+  @media(max-width:900px){.speed{display:none}}
+
+  /* trust bar */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel)}
+  .trust .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .t{padding:34px 20px;text-align:center;border-left:1px solid var(--line)}
+  .t:first-child{border-left:none}
+  .t .n{font-family:'Bebas Neue';font-size:44px;color:var(--rocket)}
+  .t .l{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+  @media(max-width:700px){.trust .wrap{grid-template-columns:1fr}.t{border-left:none;border-top:1px solid var(--line);padding:22px}}
+
+  /* sections */
+  section{padding:90px 0}
+  .sec-head{display:flex;align-items:baseline;gap:20px;margin-bottom:48px}
+  .sec-head h2{font-size:clamp(38px,5vw,58px);text-transform:uppercase}
+  .sec-head .rule{flex:1;height:2px;background:var(--rocket);opacity:.8}
+
+  /* services */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line)}
+  .card{background:var(--panel);padding:34px 28px;transition:background .15s}
+  .card:hover{background:#242424}
+  .card .num{font-family:'Bebas Neue';color:var(--rocket);font-size:20px;letter-spacing:.1em}
+  .card h3{font-size:26px;margin:10px 0 8px;text-transform:uppercase}
+  .card p{color:var(--muted);font-size:15px}
+  @media(max-width:860px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+
+  /* about */
+  .about{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .about .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+  .about p{color:var(--muted);margin-bottom:16px;font-size:17px}
+  .about p b{color:var(--white)}
+  .club{border:1px solid var(--line);background:var(--asphalt);padding:34px;text-align:center}
+  .club .disp{font-size:64px;color:var(--rocket)}
+  .club .sub{text-transform:uppercase;letter-spacing:.15em;font-size:13px;color:var(--muted);margin-top:6px}
+  .club .note{font-size:14px;color:var(--muted);margin-top:16px;line-height:1.5}
+  @media(max-width:860px){.about .cols{grid-template-columns:1fr;gap:36px}}
+
+  /* reviews strip */
+  .reviews{text-align:center}
+  .reviews .disp{font-size:clamp(40px,6vw,70px);text-transform:uppercase}
+  .reviews .disp span{color:var(--rocket)}
+  .reviews p{color:var(--muted);max-width:520px;margin:16px auto 30px;font-size:17px}
+
+  /* visit */
+  .visit .cols{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+  .visit h3{font-size:24px;text-transform:uppercase;margin-bottom:16px;color:var(--rocket)}
+  .hours{width:100%;border-collapse:collapse;font-size:16px}
+  .hours td{padding:10px 0;border-bottom:1px solid var(--line)}
+  .hours td:last-child{text-align:right;color:var(--muted)}
+  .addr{font-size:22px;line-height:1.5;margin-bottom:14px}
+  .visit .small{color:var(--muted);font-size:15px;margin-top:14px}
+  .maplink{color:var(--rocket);font-weight:600;text-transform:uppercase;font-size:14px;letter-spacing:.08em}
+  @media(max-width:760px){.visit .cols{grid-template-columns:1fr}}
+
+  /* big cta */
+  .bigcta{background:var(--rocket);color:#fff;text-align:center;padding:80px 24px}
+  .bigcta h2{font-size:clamp(44px,7vw,80px);text-transform:uppercase}
+  .bigcta p{margin:14px 0 30px;font-size:18px;opacity:.9}
+  .bigcta .btn{background:var(--asphalt)}
+  .bigcta .btn:hover{background:#000}
+
+  footer{padding:36px 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer a{text-decoration:underline}
+  .credit a{color:var(--white)}
+
+  /* mobile sticky call */
+  .m-call{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--rocket);text-align:center;padding:16px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+  @media(max-width:760px){.m-call{display:block}footer{padding-bottom:90px}}
+</style>
+</head>
+<body>
+
+<div class="mock">Design mockup built for Rockett Automotive by <b><a href="https://gatewaydigitalco.com">Gateway Digital Co</a></b> — not the live site (yet). Text Nolan to make it real.</div>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">ROCKETT <span>AUTOMOTIVE</span></div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">The Shop</a>
+      <a href="#visit">Hours &amp; Location</a>
+    </nav>
+    <a class="call-btn" href="tel:+16364859483">(636) 485-9483</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Wentzville, Missouri · Est. Independent</div>
+    <h1>What's best<br>for <em>your car.</em></h1>
+    <p>Honest diagnostics, straight answers, and work done right — from everyday repairs and maintenance to the kind of performance builds that run nines.</p>
+    <div class="cta-row">
+      <a class="btn btn-red" href="tel:+16364859483">Call the Shop</a>
+      <a class="btn btn-ghost" href="#services">What We Do</a>
+    </div>
+  </div>
+  <svg class="speed" viewBox="0 0 420 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 20 H340" stroke="#E03A1E" stroke-width="3"/>
+    <path d="M40 60 H400" stroke="#E03A1E" stroke-width="3" opacity=".7"/>
+    <path d="M0 100 H310" stroke="#E03A1E" stroke-width="3" opacity=".45"/>
+    <path d="M60 140 H420" stroke="#E03A1E" stroke-width="3" opacity=".25"/>
+  </svg>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="t"><div class="n">98%</div><div class="l">Recommend · 76 Facebook reviews</div></div>
+    <div class="t"><div class="n">A+</div><div class="l">BBB Rating</div></div>
+    <div class="t"><div class="n">9.0s</div><div class="l">9-Second Club — we race what we wrench</div></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head"><h2>Services</h2><div class="rule"></div></div>
+    <div class="grid">
+      <div class="card"><div class="num">01</div><h3>Diagnostics &amp; Repair</h3><p>Check engine lights, drivability issues, electrical gremlins — diagnosed properly the first time, explained in plain English.</p></div>
+      <div class="card"><div class="num">02</div><h3>Brakes &amp; Suspension</h3><p>Pads, rotors, shocks, struts, alignments-prep — the stuff that keeps your daily safe and planted.</p></div>
+      <div class="card"><div class="num">03</div><h3>Engine &amp; Transmission</h3><p>From tune-ups to major mechanical work. If it's worth fixing, we'll tell you. If it's not, we'll tell you that too.</p></div>
+      <div class="card"><div class="num">04</div><h3>Scheduled Maintenance</h3><p>Oil, fluids, belts, and factory-interval service that keeps small problems from becoming big invoices.</p></div>
+      <div class="card"><div class="num">05</div><h3>Performance &amp; Builds</h3><p>This is the fun stuff. Bolt-ons to full builds, backed by real track results — not just parts-catalog promises.</p></div>
+      <div class="card"><div class="num">06</div><h3>Pre-Purchase Inspections</h3><p>Buying used? Bring it by first. A one-hour inspection can save you a five-figure mistake.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap cols">
+    <div>
+      <div class="sec-head"><h2>The Shop</h2><div class="rule"></div></div>
+      <p><b>Rockett Automotive is owner-operated by Brandon Duckett</b> out of Wentzville on Highway P. The mission on the door is the whole business philosophy: do what's best for your car — not what's best for the invoice.</p>
+      <p>That's why 98% of the 76 people who've reviewed the shop recommend it. No upsell scripts, no mystery line items. Just a mechanic who races his own builds and treats your car with the same standard.</p>
+      <p>Daily drivers, work trucks, weekend toys — they all get the same honest treatment.</p>
+    </div>
+    <div class="club">
+      <div class="disp">9-SEC</div>
+      <div class="sub">Club Member</div>
+      <div class="note">When your mechanic's own car runs nines in the quarter mile, "we know engines" isn't a slogan. It's a timeslip.</div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="wrap">
+    <div class="disp"><span>98%</span> of 76 reviewers recommend this shop.</div>
+    <p>Don't take our word for it — the reviews are public. Read what Wentzville actually says.</p>
+    <a class="btn btn-ghost" href="https://www.facebook.com/RockettAutomotive/" target="_blank" rel="noopener">Read the Reviews</a>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="sec-head"><h2>Hours &amp; Location</h2><div class="rule"></div></div>
+    <div class="cols">
+      <div>
+        <h3>Find Us</h3>
+        <div class="addr">4071 Highway P<br>Wentzville, MO 63385</div>
+        <a class="maplink" href="https://maps.google.com/?q=Rockett+Automotive+4071+Highway+P+Wentzville+MO" target="_blank" rel="noopener">Get Directions →</a>
+        <p class="small">Call ahead and we'll have a plan ready when you pull in: <a href="tel:+16364859483" style="color:var(--rocket)">(636) 485-9483</a></p>
+      </div>
+      <div>
+        <h3>Hours</h3>
+        <table class="hours">
+          <tr><td>Monday – Friday</td><td>10:00 AM – 6:00 PM</td></tr>
+          <tr><td>Saturday</td><td>10:00 AM – 5:00 PM</td></tr>
+          <tr><td>Sunday</td><td>Closed</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bigcta">
+  <h2>Your car deserves better<br>than a guess.</h2>
+  <p>Call the shop. Talk to the guy who'll actually be working on it.</p>
+  <a class="btn" href="tel:+16364859483">(636) 485-9483</a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Rockett Automotive · Wentzville, MO · <a href="https://www.facebook.com/RockettAutomotive/">Facebook</a></div>
+    <div class="credit">Design mockup by <a href="https://gatewaydigitalco.com">Gateway Digital Co</a> — St. Louis web design, $499, done in a week.</div>
+  </div>
+</footer>
+
+<a class="m-call" href="tel:+16364859483">📞 Call Rockett — (636) 485-9483</a>
+
+</body>
+</html>
