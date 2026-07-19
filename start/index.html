@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- GATEWAY DIGITAL CO — CLIENT INTAKE · hosts at gatewaydigitalco.com/start/
+     Same question set as intake/intake-questions.md (the master).
+     Submit = opens email to nolan@gatewaydigitalco.com with the full brief;
+     Copy button as fallback. Autosaves to localStorage as they type. -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start Your Website — Gateway Digital Co</title>
+<meta name="description" content="Tell me about your business and what you want — I'll take it from there. Websites for St. Louis small businesses, $499, done in a week.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#FAF5EC;--ink:#1E1913;--red:#C8442C;--soft:#4A4238;--line:#DDD3BE;--card:#FFFDF8}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:'Karla',sans-serif;line-height:1.6}
+  h1,h2{font-family:'Fraunces',serif;line-height:1.15}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  header{padding:54px 0 10px;text-align:center}
+  .arch{width:44px;height:64px;border:3px solid var(--red);border-bottom:none;border-radius:44px 44px 0 0;margin:0 auto 18px}
+  header h1{font-size:clamp(30px,5vw,44px)}
+  header .sub{color:var(--soft);max-width:520px;margin:14px auto 0}
+  .steps{display:flex;justify-content:center;gap:8px;margin:26px 0 8px;font-size:13px;color:var(--soft)}
+  .steps b{color:var(--red)}
+  section.blk{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:30px 28px;margin:22px 0}
+  .blk h2{font-size:22px;margin-bottom:4px}
+  .blk .hint{color:var(--soft);font-size:14px;margin-bottom:20px}
+  label{display:block;font-weight:700;font-size:14.5px;margin:16px 0 6px}
+  label .opt{font-weight:400;color:var(--soft)}
+  input[type=text],input[type=tel],input[type=email],textarea,select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;font-family:'Karla';font-size:15.5px;color:var(--ink)}
+  textarea{min-height:84px;resize:vertical}
+  input:focus,textarea:focus,select:focus{outline:2px solid var(--red);outline-offset:1px;border-color:transparent}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .chip{border:1.5px solid var(--line);border-radius:99px;padding:8px 16px;font-size:14px;cursor:pointer;background:#fff;user-select:none}
+  .chip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.row2{grid-template-columns:1fr}}
+  .niche-sec{display:none}
+  .niche-sec.on{display:block}
+  .submit-zone{text-align:center;padding:10px 0 70px}
+  .btn{display:inline-block;border:none;cursor:pointer;font-family:'Karla';border-radius:8px;padding:16px 34px;font-size:16px;font-weight:700}
+  .btn-red{background:var(--red);color:#fff}
+  .btn-red:hover{background:#A93A25}
+  .btn-ghost{background:none;border:2px solid var(--ink);margin-left:10px}
+  .note{font-size:13.5px;color:var(--soft);margin-top:14px}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--paper);padding:12px 22px;border-radius:99px;font-size:14.5px;transition:transform .3s;z-index:99}
+  .toast.on{transform:translateX(-50%) translateY(0)}
+  footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-size:13.5px;color:var(--soft)}
+  footer a{color:inherit}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="arch"></div>
+  <h1>Let's build your website.</h1>
+  <p class="sub">Ten minutes of questions — then I disappear and come back with your site. The more you tell me, the fewer drafts we need. Skip anything you're unsure about.</p>
+  <div class="steps"><span><b>1.</b> Your business</span> · <span><b>2.</b> Your style</span> · <span><b>3.</b> The details</span></div>
+</header>
+
+<form class="wrap" id="f" onsubmit="return false">
+
+<section class="blk">
+  <h2>1 · Your business</h2>
+  <p class="hint">The facts that go on the site.</p>
+  <div class="row2">
+    <div><label>Business name</label><input type="text" id="bname" placeholder="Rockett Automotive"></div>
+    <div><label>Your name</label><input type="text" id="oname" placeholder="Brandon"></div>
+  </div>
+  <div class="row2">
+    <div><label>Phone for the site</label><input type="tel" id="phone" placeholder="(636) 555-1234"></div>
+    <div><label>Email</label><input type="email" id="email" placeholder="you@business.com"></div>
+  </div>
+  <label>Address / town <span class="opt">(or service area if mobile)</span></label><input type="text" id="addr" placeholder="4071 Highway P, Wentzville">
+  <label>Business hours</label><input type="text" id="hours" placeholder="M–F 10–6, Sat 10–5, Sun closed">
+  <label>What do you do, in your own words? <span class="opt">(2–3 sentences — I'll polish it)</span></label><textarea id="what" placeholder="We fix cars. Everything from oil changes to full engine builds..."></textarea>
+  <label>What makes you different from the shop down the road?</label><textarea id="diff" placeholder="Honest pricing, we race our own cars, 20 years in town..."></textarea>
+  <label>Top services to feature <span class="opt">(3–6, comma separated)</span></label><input type="text" id="services" placeholder="Diagnostics, brakes, performance builds">
+  <label>Where do your reviews live, and roughly how many? </label><input type="text" id="reviews" placeholder="Facebook — 76 reviews, 98% recommend">
+  <label>Current online presence <span class="opt">(Facebook, old site, Google listing — paste links)</span></label><input type="text" id="links" placeholder="facebook.com/yourbusiness">
+</section>
+
+<section class="blk">
+  <h2>2 · Your style</h2>
+  <p class="hint">This is where the site stops being a template.</p>
+  <label>What should the site FEEL like? <span class="opt">(tap all that fit)</span></label>
+  <div class="chips" id="feel">
+    <span class="chip">Bold</span><span class="chip">Clean & minimal</span><span class="chip">Warm & friendly</span><span class="chip">High-end / luxury</span><span class="chip">Rugged</span><span class="chip">Playful</span><span class="chip">Classic</span><span class="chip">Modern</span>
+  </div>
+  <label>Colors you want <span class="opt">(brand colors, or just ones you love)</span></label><input type="text" id="colors" placeholder="Black and red like our logo / no pink">
+  <label>Colors or looks you HATE</label><input type="text" id="hates" placeholder="Nothing purple, no cartoon fonts">
+  <label>Websites you like <span class="opt">(any site, any industry — paste links)</span></label><input type="text" id="inspo" placeholder="I like how nike.com feels">
+  <label>Photos & video <span class="opt">(what do you have?)</span></label>
+  <div class="chips" id="media">
+    <span class="chip">Professional photos</span><span class="chip">Good phone photos</span><span class="chip">Photos on my Facebook</span><span class="chip">Some video</span><span class="chip">Not much — help me</span>
+  </div>
+</section>
+
+<section class="blk">
+  <h2>3 · The details</h2>
+  <p class="hint">Almost done.</p>
+  <label>What's the #1 job of this website?</label>
+  <div class="chips" id="goal">
+    <span class="chip">Make the phone ring</span><span class="chip">Online bookings</span><span class="chip">Look established</span><span class="chip">Show off my work</span><span class="chip">Event/job inquiries</span>
+  </div>
+  <label>What type of business? <span class="opt">(unlocks a few extra questions)</span></label>
+  <select id="niche">
+    <option value="">Choose one...</option>
+    <option value="lawn">Lawn care / landscaping</option>
+    <option value="auto">Auto repair / detailing</option>
+    <option value="salon">Salon / barber / spa</option>
+    <option value="pet">Pet grooming / services</option>
+    <option value="food">Food truck / bakery / restaurant</option>
+    <option value="contractor">Contractor / trades</option>
+    <option value="other">Something else</option>
+  </select>
+
+  <div class="niche-sec" data-n="lawn"><label>Towns you serve</label><input type="text" id="n-lawn-1" placeholder="Wentzville, O'Fallon, Lake St Louis"><label>Do you offer seasonal contracts?</label><input type="text" id="n-lawn-2" placeholder="Yes — mowing season packages"></div>
+  <div class="niche-sec" data-n="auto"><label>Specialties / certifications <span class="opt">(brands, warranties, racing, diesel...)</span></label><input type="text" id="n-auto-1" placeholder="NAPA certified, performance builds"><label>Do you offer financing or warranties?</label><input type="text" id="n-auto-2" placeholder="2yr/24k warranty on repairs"></div>
+  <div class="niche-sec" data-n="salon"><label>Services + prices to list <span class="opt">(or link your Booksy/StyleSeat)</span></label><textarea id="n-salon-1" placeholder="Cut $35, Fade $40, Color from $85..."></textarea><label>Booking link if you have one</label><input type="text" id="n-salon-2" placeholder="booksy.com/..."></div>
+  <div class="niche-sec" data-n="pet"><label>Breeds/sizes you take, and any specialties</label><input type="text" id="n-pet-1" placeholder="All breeds under 100lbs, great with anxious dogs"><label>Walk-ins or appointment only?</label><input type="text" id="n-pet-2" placeholder="Appointments, walk-in nail trims"></div>
+  <div class="niche-sec" data-n="food"><label>Menu items + prices to feature <span class="opt">(top 6)</span></label><textarea id="n-food-1" placeholder="Smash burger $9, loaded fries $6..."></textarea><label>Do you do event bookings / catering?</label><input type="text" id="n-food-2" placeholder="Yes — weddings, company lunches"></div>
+  <div class="niche-sec" data-n="contractor"><label>Licensed & insured? Service radius?</label><input type="text" id="n-con-1" placeholder="Licensed + insured, 30 miles from O'Fallon"><label>Free estimates? Typical projects?</label><input type="text" id="n-con-2" placeholder="Free estimates. Decks, basements, drywall"></div>
+  <div class="niche-sec" data-n="other"><label>Tell me about your industry and customers</label><textarea id="n-oth-1" placeholder="Who buys from you and why?"></textarea></div>
+
+  <label>Do you own a domain? <span class="opt">(yourbusiness.com)</span></label><input type="text" id="domain" placeholder="Yes — rockettauto.com / No, help me get one">
+  <label>Anything else? <span class="opt">(special requests, must-haves, deal-breakers)</span></label><textarea id="extra" placeholder="My daughter designed our logo — we have to use it..."></textarea>
+</section>
+
+<div class="submit-zone">
+  <button class="btn btn-red" onclick="send()">Send It to Nolan →</button>
+  <button class="btn btn-ghost" onclick="copyBrief()">Copy Instead</button>
+  <p class="note">"Send" opens your email app with everything filled in — just hit send. Your answers also save in this browser as you type, so nothing gets lost.</p>
+</div>
+
+</form>
+
+<div class="toast" id="toast">Copied — text or email it to Nolan!</div>
+
+<footer>
+  <div>Gateway Digital Co · St. Louis web design · $499, done in a week · <a href="https://gatewaydigitalco.com">gatewaydigitalco.com</a></div>
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const fields=['bname','oname','phone','email','addr','hours','what','diff','services','reviews','links','colors','hates','inspo','domain','extra','niche','n-lawn-1','n-lawn-2','n-auto-1','n-auto-2','n-salon-1','n-salon-2','n-pet-1','n-pet-2','n-food-1','n-food-2','n-con-1','n-con-2','n-oth-1'];
+
+/* chips */
+document.querySelectorAll('.chips').forEach(g=>g.addEventListener('click',e=>{
+  if(e.target.classList.contains('chip')){e.target.classList.toggle('on');save();}
+}));
+
+/* niche reveal */
+$('niche').addEventListener('change',()=>{
+  document.querySelectorAll('.niche-sec').forEach(s=>s.classList.toggle('on',s.dataset.n===$('niche').value));
+  save();
+});
+
+/* autosave */
+function save(){
+  const d={};
+  fields.forEach(f=>{const el=$(f);if(el)d[f]=el.value});
+  ['feel','media','goal'].forEach(g=>d['c-'+g]=[...document.querySelectorAll('#'+g+' .chip.on')].map(c=>c.textContent));
+  try{localStorage.setItem('gdc-intake',JSON.stringify(d))}catch(e){}
+}
+fields.forEach(f=>{const el=$(f);if(el)el.addEventListener('input',save)});
+(function load(){
+  try{
+    const d=JSON.parse(localStorage.getItem('gdc-intake')||'{}');
+    fields.forEach(f=>{const el=$(f);if(el&&d[f])el.value=d[f]});
+    ['feel','media','goal'].forEach(g=>(d['c-'+g]||[]).forEach(t=>{
+      [...document.querySelectorAll('#'+g+' .chip')].find(c=>c.textContent===t)?.classList.add('on');
+    }));
+    if(d.niche)$('niche').dispatchEvent(new Event('change'));
+  }catch(e){}
+})();
+
+/* brief builder */
+function chips(g){const v=[...document.querySelectorAll('#'+g+' .chip.on')].map(c=>c.textContent).join(', ');return v||'—'}
+function v(f){return ($(f)&&$(f).value.trim())||'—'}
+function brief(){
+  const n=$('niche').value;
+  let nicheQ='';
+  const map={lawn:['n-lawn-1','Towns served','n-lawn-2','Seasonal contracts'],auto:['n-auto-1','Specialties/certs','n-auto-2','Financing/warranty'],salon:['n-salon-1','Services+prices','n-salon-2','Booking link'],pet:['n-pet-1','Breeds/specialties','n-pet-2','Walk-ins'],food:['n-food-1','Menu','n-food-2','Events/catering'],contractor:['n-con-1','Licensed/radius','n-con-2','Estimates/projects'],other:['n-oth-1','Industry']};
+  if(map[n]){for(let i=0;i<map[n].length;i+=2)nicheQ+=`${map[n][i+1]}: ${v(map[n][i])}\n`}
+  return `WEBSITE INTAKE — ${v('bname')}
+════════════════════════════
+BUSINESS
+Name: ${v('bname')} | Owner: ${v('oname')}
+Phone: ${v('phone')} | Email: ${v('email')}
+Address/area: ${v('addr')}
+Hours: ${v('hours')}
+What they do: ${v('what')}
+Different because: ${v('diff')}
+Top services: ${v('services')}
+Reviews: ${v('reviews')}
+Existing links: ${v('links')}
+
+STYLE
+Feel: ${chips('feel')}
+Colors wanted: ${v('colors')}
+Colors/looks hated: ${v('hates')}
+Sites they like: ${v('inspo')}
+Media available: ${chips('media')}
+
+DETAILS
+#1 job of site: ${chips('goal')}
+Niche: ${n||'—'}
+${nicheQ}Domain: ${v('domain')}
+Special requests: ${v('extra')}
+════════════════════════════
+(Submitted via gatewaydigitalco.com/start)`;
+}
+function send(){
+  save();
+  const b=$('bname').value.trim()||'New client';
+  location.href='mailto:nolan@gatewaydigitalco.com?subject='+encodeURIComponent('Website intake — '+b)+'&body='+encodeURIComponent(brief());
+}
+function copyBrief(){
+  save();
+  navigator.clipboard.writeText(brief()).then(()=>{
+    const t=$('toast');t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2600);
+  });
+}
+</script>
+</body>
+</html>
